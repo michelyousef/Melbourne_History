@@ -2,6 +2,9 @@ package com.example.sit302_team.melbourne_history;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -11,9 +14,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -47,12 +51,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-        // Add a marker in Melbourne and move the camera, then hiding the marker by setting the visible method to false
-        // as we need to zoom in to Melbourne without adding any icons when the application is starting
-        LatLng melbourne = new LatLng(-37.8136, 144.9631);
-        mMap.addMarker(new MarkerOptions().position(melbourne).visible(false));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(melbourne));
-        mMap.animateCamera( CameraUpdateFactory.zoomTo( 9.0f ) );
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        LatLng test = new LatLng(-37.8136, 144.9631);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(test).title("Marker in Melbourne"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if(marker.getTitle().equals("Marker in Sydney")) // if marker source is clicked
+                    Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+                return true;
+            }
+        });
+
     }
     // Stack Overflow available at http://stackoverflow.com/questions/31016722/googleplayservicesutil-vs-googleapiavailability
     private boolean checkPlayServices() {
@@ -69,6 +83,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         return true;
+    }
+
+    // inflate the action bar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    // option in the menu bar is selected
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // getting the item selected
+        int itemId = item.getItemId();
+
+        // using switch to determine the action
+        switch (itemId){
+
+            // menu option1 / about us option is clicked
+            case R.id.main_menu_option1:
+                // goToAboutUsActivity();
+                break;
+
+            // menu option2 / contact us option is clicked
+            case R.id.main_menu_option2:
+                // goToContactUsActivity();
+                break;
+
+            // menu option3 / settings option is clicked
+            case R.id.main_menu_option3:
+                //goToVideoActivity();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

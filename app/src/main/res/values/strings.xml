@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Melbourne_History</string>
     <string name="title_activity_maps">Map</string>
+    <string name="menu1">Favorite</string>
+    <string name="menu2">About</string>
+    <string name="menu3">List All</string>
 </resources>
