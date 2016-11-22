@@ -2,20 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Show menu options for home activity -->
+    <!-- Show menu options for maps activity -->
 
-    <!-- Item 1: Show About Us options if there is room -->
+    <!-- Item 1: Show Favorites options if there is room -->
     <item android:id="@+id/main_menu_option1"
         app:showAsAction="ifRoom"
-        android:title="@string/menu1"/>
+        android:title="@string/menu1"
+        android:icon="@mipmap/ic_favorites"/>
 
-    <!-- Item 2: Show Contact Us options if there is room -->
-    <item android:id="@+id/main_menu_option2"
-        app:showAsAction="ifRoom"
-        android:title="@string/menu2"/>
-
-    <!-- Item 3: Never Settings options -->
-    <item android:id="@+id/main_menu_option3"
-        app:showAsAction="never"
-        android:title="@string/menu3"/>
 </menu>

@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">Melbourne_History</string>
+    <string name="app_name">Melbourne History</string>
     <string name="title_activity_maps">Map</string>
-    <string name="menu1">Favorite</string>
-    <string name="menu2">About</string>
-    <string name="menu3">List All</string>
+    <string name="menu1">Favorites</string>
+    <string name="newline" />
+    <string name="aboutUsPar1">Paragraph 1</string>
+    <string name="aboutUsPar2">Paragraph 2</string>
+    <string name="aboutUsTitle">About Us</string>
+    <string name="tab1Name">Locations</string>
+    <string name="tab2Name">Map</string>
+    <string name="tab3Name">About Us</string>
+    <string name="location_name">Location 1</string>
+    <string name="location_list_title">Historic Places</string>
 </resources>

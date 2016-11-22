@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@mipmap/street_front_view"
+    android:alpha="0.8"
+    tools:context="com.example.sit302_team.melbourne_history.AboutUs">
+
+    <!-- wrap all widget to scroll view -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- About Melbourne History App -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/white"
+                android:alpha="0.8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutUsTitle"
+                    android:textSize="35sp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"/>
+
+                <!-- Break Line -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newline"/>
+
+            </LinearLayout>
+
+            <!-- paragraph 1 -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/white"
+                    android:alpha="0.8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aboutUsPar1"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:text="@string/aboutUsPar1"
+                    android:textSize="15sp"
+                    android:textAlignment="center"
+                    android:padding="5dp"/>
+
+                <!-- Break Line -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newline"/>
+
+            </LinearLayout>
+
+            <!-- paragraph 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/white"
+                android:alpha="0.8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aboutUsPar2"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:text="@string/aboutUsPar2"
+                    android:textSize="15sp"
+                    android:textAlignment="center"/>
+
+                <!-- Break Line -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newline"/>
+
+            </LinearLayout>
+
+            <!-- Break Line -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newline"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
