@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_location_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.example.sit302_team.melbourne_history.LocationListActivity">
+
+    <!-- location list title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/location_list_title"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/location_list_title"
+        android:textSize="25sp"
+        android:padding="5dp"
+        android:textColor="@color/white"/>
+
+    <!-- list view -->
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location_list_title"
+        android:id="@android:id/list">
+    </ListView>
+
+</RelativeLayout>
