@@ -16,7 +16,6 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
     // declaring the database table name and column names
     public static final String TABLE_NAME  = "places";
-    public static final String COLUMN_ID = "_id";
     public static final String COLUMN_LOCATION = "location";
     public static final String COLUMN_ADDRESS = "address";
     public static final String COLUMN_PHONE = "phone";
@@ -27,14 +26,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
 
+
     // declaring database name and version
     private static final String DATABASE_NAME = "placesDatabase.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_NAME + "( " + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_LOCATION +" text not null, "+COLUMN_ADDRESS +" text not null, "+ COLUMN_PHONE
+            + TABLE_NAME + "( "  + COLUMN_LOCATION +" text primary key, "+COLUMN_ADDRESS +" text not null, "+ COLUMN_PHONE
             + " text not null, "+COLUMN_WEBSITE +" text not null, "+COLUMN_OPENING_HOURS +" text not null, "+COLUMN_DESCRIPTION +" text not null, "+COLUMN_PHOTO+" text not null);";
     // declaring database constructor
     public MySQLiteHelper(Context context) {

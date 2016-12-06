@@ -38,11 +38,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     // Declaring MySQLite open helper object
     MySQLiteHelper myOpenHelper;
     // Location data stored in separate arrays to be used in the database creation
-    String[] location = {"Cooks' Cottage",
+    String[] location = {"Cooks Cottage",
             "Government House","Immigration Museum","Luna Park",
             "Melbourne Museum","Melbourne Museum of Printing","Melbourne Town Hall",
-            "Melbourne’s Chinese Museum","Old Melbourne Gaol","Parliament House",
-            "POLLY WOODSIDE TALL SHIP","Rippon Lea House & Gardens","Royal Arcade",
+            "Melbourne Chinese Museum","Old Melbourne Gaol","Parliament House",
+            "Polly Woodside Tall Ship","Rippon Lea House & Gardens","Royal Arcade",
             "Shrine of Remembrance","The Block Arcade"};
     String[] address={"Fitzroy Gardens,Wellington Parade,East Melbourne VIC 3002",
             "Government House Drive  Melbourne 3004",
@@ -59,8 +59,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "335 BOURKE STREET MALL  Melbourne 3000",
             "Corner St Kilda Road and Domain Road  Melbourne 3001",
             "282 Collins St  Melbourne 3001"};
-    String[] phone = {"9658 9658", "9655 4211", "13 11 02", "9525 5033", "13 11 02", "9689 7555", "9658 9658", "9662 2888",
-            "8663 7228", "9651 8911", "9699 9760", "9523 6095", "0438 891 212", "9661 8100", "9654 5244"};
+    String[] phone = {"03 9658 9658", "03 9655 4211", "13 11 02", "03 9525 5033", "13 11 02", "03 9689 7555", "03 9658 9658", "03 9662 2888",
+            "03 8663 7228", "03 9651 8911", "03 9699 9760", "03 9523 6095", "0438 891 212", "03 9661 8100", "03 9654 5244"};
     String[] website = {"http://www.thatsmelbourne.com.au/PlacesToGo/CooksCottage/Pages/Cookscottage.aspx",
                 "http://www.governor.vic.gov.au/government-house",
                 "https://museumvictoria.com.au/immigrationmuseum/",
@@ -93,7 +93,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 "Mon - Thu 8.00 am - 6:00 pm, Fri 8.00 am - 8:00 pm, Sat 8.00 am - 5:00 pm, Sun 9.00 am - 5:00 pm"};
     String[] description={"Cook's cottage was built in 1755 and it is the oldest building in Australia. The cottage was originally built and located in Yokshire, England and built by Captain James Cooks' parent. In 1934, The cottage was relocated by Sir Russell Grimware. To bring the cottage over to Australia, every brick was numbered and packed.",
                 "Located next to the Botanical Gardens and surrounded by Kings Domain, The Governor of Victoria uses Government House as their office and official residence. Between 1901 and 1930, it was used as the official residence of the Governor-General of Australia. It is the largest Government House in the former British Empire. The land for Government House was set aside in 1841, the surrounding landscape was completed in 1857. Construction on Government house began in 1871 and was completed in 1876.",
-                "The former Old Customs house was restore and reopened as the Imigration Museum in 1998. It is the former office of Melbourne's immigration and customs and is full of real stories of people that migrated to Victoria. Inside the museum, you will find two levels of galleries that consists of temporary and permanent exhibitions. The Tribute Garden honours immigrants from over 90 different countries.",
+                "The former Old Customs house was restore and reopened as the Immigration Museum in 1998. It is the former office of Melbourne's immigration and customs and is full of real stories of people that migrated to Victoria. Inside the museum, you will find two levels of galleries that consists of temporary and permanent exhibitions. The Tribute Garden honours immigrants from over 90 different countries.",
                 "Located on Port Phillip Bay, Luna Park has been the destination for families and visitors for over a century. Luna Park celebrated 100 years in 2012. It is full of heritage listed attracts and new rides to cater for all different ages. The most famous of the Park’s attractions is its Scenic Railway Roller Coaster, a large wooden coaster, that takes its passengers at high speed, around the perimeter of the Park. The Roller Coaster holds the title of the oldest, continually operating roller cosaster in the world and the only roller coasts to still have a standing brakeman that is in control of its moving carriages.",
                 "The Melbourne Museum provides visitors an insight into the life in Victoria. It boasts permanent collections as well as temporary exhibitons from all over the world. Visitors will get to experience Victoria's natural environment, culter and history. The museum was previously located at the State Library Building but closed in 1997, but relocated to the Carlton Gardens in a brand new building on the 21st of October 2000.",
                 "Visitors can see numerous components of typesetting and printing, including: Gutenberg's invention of movable types, Typesetting (by hand) with movable types, Linotype linecaster (hot metal composition), Ludlow Typograph linecaster (hot metal for large or fancy type), Poster types (usu. wood) for large lettering, engravings needed to print an illustration, stereotypes (duplicates of typesettings), the hand press as used by early printers, the cylinder press (more modern process), posters, books and other works printed in our studio by visiting artists, Library of Books as Artefacts, where the interest is not \"Who wrote it?\" but \"Who printed it, and how?\", Archival collections of thousands of artefacts and documents, illustrating the day-to-day work of the printing trade Slide show on traditional printing and the Museum's collections and programs.",
@@ -106,10 +106,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 "It is the first arcade built and longest-standing arcade in Australia. The archade's historical significance is profound and underpinned by the fact that it is part of the Victorian Heritage Register. The most striking feature of the arcade is the magnificent Gaunt’s Clock which is flanked either side by two giant statues of the mythical figures of Gog and Magog.",
                 "The Shrine is a Victoria state memorial built in 1934. It is a memorial to all of the Australians who served in war and peacekeeping operation throughout Australia's history. Immerse yourself in the real-life stories of Australians in global conflicts, with over 800 artworks, historical artefacts and personal effects featured in the Galleries of Remembrance. Special exhibitions and events are held throughout the year providing an ever changing experience.",
                 "The Block Arcade is a heritage shopping arcade located in the centre of Melbourne, one hundred years ago it was the \"place to be seen\". The arcade was designed by David C. Askew and constructured between 1891 and 1893."};
-    String[] photo={"cooks_cottage.jpg", "government_house.jpg","immigration_museum.jpg","luna_park.jpg",
-                "melbourne_museum", "melbourne_museum_of_printing", "melbourne_town_hall.jpg", "melbourne_chinese_museum.jpg",
-                "old_melbourne_gaol.jpg", "parliament_house.jpg", "polly_woodside.jpg", "rippon_lea_house.jpg",
-                "royal_arcade.jpg", "shrine_of_remembrance.jpg", "the_block_arcade.jpg"};
+    String[] photo={"cooks_cottage", "government_house","immigration_museum","luna_park",
+                "melbourne_museum", "melbourne_museum_of_printing", "melbourne_town_hall", "melbourne_chinese_museum",
+                "old_melbourne_gaol", "parliament_house", "polly_woodside", "rippon_lea_house",
+                "royal_arcade", "shrine_of_remembrance", "the_block_arcade"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,21 +125,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Create our database object and insert data in it using our OpenHelper object
         // by accessing getWritableDatabase() method of our myOpenHelper object
         SQLiteDatabase db = myOpenHelper.getWritableDatabase();
-        //loop through the data arrays and insert it into the database
-        for (int i=0; i <15; i++) {
-            // wrap the database data
-            ContentValues values = new ContentValues();
-            //names inside the quotes must be exactly the same as the database column names
-            values.put(MySQLiteHelper.COLUMN_LOCATION, location[i]);
-            values.put(MySQLiteHelper.COLUMN_ADDRESS, address[i]);
-            values.put(MySQLiteHelper.COLUMN_PHONE, phone[i]);
-            values.put(MySQLiteHelper.COLUMN_WEBSITE, website[i]);
-            values.put(MySQLiteHelper.COLUMN_OPENING_HOURS,hours[i]);
-            values.put(MySQLiteHelper.COLUMN_DESCRIPTION, description[i]);
-            values.put(MySQLiteHelper.COLUMN_PHOTO, photo[i]);
-            // insert data into the database from our ContentValues object
-            db.insert(MySQLiteHelper.TABLE_NAME, null, values);
-        }
+
+
+            //loop through the data arrays and insert it into the database
+            for (int i = 0; i < 15; i++) {
+                // wrap the database data
+                ContentValues values = new ContentValues();
+                //names inside the quotes must be exactly the same as the database column names
+                values.put(MySQLiteHelper.COLUMN_LOCATION, location[i]);
+                values.put(MySQLiteHelper.COLUMN_ADDRESS, address[i]);
+                values.put(MySQLiteHelper.COLUMN_PHONE, phone[i]);
+                values.put(MySQLiteHelper.COLUMN_WEBSITE, website[i]);
+                values.put(MySQLiteHelper.COLUMN_OPENING_HOURS, hours[i]);
+                values.put(MySQLiteHelper.COLUMN_DESCRIPTION, description[i]);
+                values.put(MySQLiteHelper.COLUMN_PHOTO, photo[i]);
+                // insert data into the database from our ContentValues object and avoiding duplicate entries
+                // by using SQLiteDatabase.CONFLICT_IGNORE
+                /*Stack overflow, available at: http://stackoverflow.com/questions/26326696/how-to-prevent-to-insert-duplicate-value-in-sqlite-databse-if-duplicate-then-ov
+                * Accessed 5 Dec 16*/
+                 db.insertWithOnConflict(MySQLiteHelper.TABLE_NAME, null, values,SQLiteDatabase.CONFLICT_IGNORE);
+            }
+
 
 
     }
@@ -221,7 +227,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // create a marker for each historic places
         Marker cooksCottage_marker = mMap.addMarker(new MarkerOptions()
                 .position(cooksCottage_location)
-                .title("Cook's Cottage"));
+                .title("Cooks Cottage"));
 
         Marker govermentHouse_marker = mMap.addMarker(new MarkerOptions()
                 .position(governmentHouse_location)
@@ -249,7 +255,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Marker melbourneChineseMuseum_marker = mMap.addMarker(new MarkerOptions()
                 .position(melbourneChineseMuseum_location)
-                .title("Melbourne's Chinese Museum"));
+                .title("Melbourne Chinese Museum"));
 
         Marker oldMelbourneGaol_marker = mMap.addMarker(new MarkerOptions()
                 .position(oldMelbourneGaol_location)
@@ -291,7 +297,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 switch(marker.getTitle()){
 
-                    case "Cook's Cottage":
+                    case "Cooks Cottage":
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
@@ -319,7 +325,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
-                    case "Melbourne's Chinese Museum":
+                    case "Melbourne Chinese Museum":
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;

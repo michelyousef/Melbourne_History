@@ -54,10 +54,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LocationDetailsActivity" />
+        <activity android:name=".LocationDetailsActivity"
+                  android:parentActivityName="com.example.sit302_team.melbourne_history.MainActivity"/>
         <activity android:name=".AboutUs"
-            android:label="About Melbourne History"/>
-        <activity android:name=".LocationListActivity" />
+            android:label="About Melbourne History"
+                  />
+        <activity android:name=".LocationListActivity"
+                  />
         <activity android:name=".MapsActivity"/>
     </application>
 

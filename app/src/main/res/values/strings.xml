@@ -11,4 +11,5 @@
     <string name="tab3Name">About Us</string>
     <string name="location_name">Location 1</string>
     <string name="location_list_title">Historic Places</string>
+    <string name="photo">Photo</string>
 </resources>
