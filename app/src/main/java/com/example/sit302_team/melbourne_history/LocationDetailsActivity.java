@@ -57,6 +57,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setTitle(locationPassed); // This is to change the Activity title to match the selected location
 
 
+        // get the returned cursor and use it to fetch the required data
         Cursor myCursor = getReading();
         while (myCursor.moveToNext()) {
             // storing the contents of the cursor in string variables
