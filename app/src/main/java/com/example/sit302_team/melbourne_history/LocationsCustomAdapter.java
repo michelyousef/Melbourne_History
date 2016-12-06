@@ -50,10 +50,7 @@ public class LocationsCustomAdapter extends BaseAdapter {
     }
 
     // initialise a holder class
-    public class Holder{
-
-        TextView text;
-    }
+    public class Holder { TextView text; }
 
     // For all the string that is passed, show it in the layout that is prepared inside the custom_team_row
     @Override

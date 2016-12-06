@@ -11,7 +11,7 @@
 
         <!-- location picture -->
         <ImageView
-            android:layout_width="70dp"
+            android:layout_width="140dp"
             android:layout_height="70dp"
             android:id="@+id/location_pic"
             android:padding="5dp"
@@ -23,11 +23,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/location_name"
             android:text="@string/location_name"
-            android:textColor="@color/black"
+            android:textColor="@color/green"
             android:padding="5dp"
             android:layout_marginStart="5dp"
             android:textSize="25sp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:textStyle="normal|bold" />
 
     </LinearLayout>
 

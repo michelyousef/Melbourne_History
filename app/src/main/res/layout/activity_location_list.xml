@@ -15,12 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/location_list_title"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:gravity="center"
         android:text="@string/location_list_title"
         android:textSize="25sp"
         android:padding="5dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/purple"
+        android:textStyle="normal|bold" />
 
     <!-- list view -->
     <ListView
