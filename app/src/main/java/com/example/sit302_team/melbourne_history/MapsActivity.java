@@ -35,8 +35,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     public Button userTrackerButton;
     public String text;
+
     // Declaring MySQLite open helper object
     MySQLiteHelper myOpenHelper;
+
     // Location data stored in separate arrays to be used in the database creation
     String[] location = {"Cooks' Cottage",
             "Government House","Immigration Museum","Luna Park",
