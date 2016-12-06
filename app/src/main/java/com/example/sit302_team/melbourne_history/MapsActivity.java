@@ -41,14 +41,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     // Location data stored in separate arrays to be used in the database creation
     String[] location = {
-            "Cooks' Cottage",
+            "Cooks Cottage",
             "Government House",
             "Immigration Museum",
             "Luna Park",
             "Melbourne Museum",
             "Melbourne Museum of Printing",
             "Melbourne Town Hall",
-            "Melbourne’s Chinese Museum",
+            "Melbourne Chinese Museum",
             "Old Melbourne Gaol",
             "Parliament House",
             "Polly Woodside Tall Ship",
@@ -110,32 +110,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "theblock.com.au"};
 
     String[] hours={
-            "Open Daily; 9am - 5pm. Closed Christmas Day.",
+            "Open Daily, 9am - 5pm. Closed Christmas Day.",
             "Open 24 hours",
             "Closed Good Friday and Christmas Day",
             "Open Weekends, Victorian school holidays and every public holiday except Christmas Day. Closed weekdays during the school term.",
-            "Open Daily; 10am - 5pm. (Closed Good Friday and Christmas Day)",
-            "Open Sunday to Thursday; 2pm - 5pm without appointment.",
-            "Open Monday - Friday; 11am - 12pm, 1pm - 2pm. Tours not available on weekends or public holidays except Australia Day when tours occur every hour from 12pm - 3pm.",
-            "Open Daily; 10am – 4pm. Closed Good Friday, Christmas Day and New Year’s Day.",
-            "Open Daily; 9.30am – 5pm. Closed Christmas Day and Good Friday",
-            "Non-sitting days: Open Monday - Friday; 8:30am - 5:30pm. Closed on public holidays. During sitting days: Opens at 8:30am and remains open while parliament is sitting. Not open on weekends except for special events such as Open Day.",
-            "Open Saturday and Sunday; 10am - 4pm. Closed Christmas Day, Boxing Day, New Year's Day and Easter weekend Polly Woodside has limited seasonal opening hours and is sometimes closed to general visitors. Please call prior to visiting to confirm opening hours. Open everyday during School Holidays; 10am - 4pm",
+            "Open Daily, 10am - 5pm. (Closed Good Friday and Christmas Day)",
+            "Open Sunday to Thursday, 2pm - 5pm without appointment.",
+            "Open Monday - Friday, 11am - 12pm, 1pm - 2pm. Tours not available on weekends or public holidays except Australia Day when tours occur every hour from 12pm - 3pm.",
+            "Open Daily, 10am – 4pm. Closed Good Friday, Christmas Day and New Year’s Day.",
+            "Open Daily, 9.30am – 5pm. Closed Christmas Day and Good Friday",
+            "Non-sitting days: Open Monday - Friday, 8:30am - 5:30pm. Closed on public holidays. During sitting days: Opens at 8:30am and remains open while parliament is sitting. Not open on weekends except for special events such as Open Day.",
+            "Open Saturday and Sunday, 10am - 4pm. Closed Christmas Day, Boxing Day, New Year's Day and Easter weekend Polly Woodside has limited seasonal opening hours and is sometimes closed to general visitors. Please call prior to visiting to confirm opening hours. Open everyday during School Holidays, 10am - 4pm",
             "Open Daily, 10am – 5pm. Closed Good Friday and Christmas Day. Entry to the House is by Guided Tour only, booked upon arrival at the Gatehouse. Guided House Tours are subject to volunteer availability and run half hourly from 10:30am to 3pm",
-            "Open Monday - Thursday 9am – 6pm; Friday 10am – 8pm; Saturday 9am – 5pm; Sunday 10am – 5pm; Public Holidays 11am – 5pm",
-            "Open Daily; 10am - 5pm. Closed Good Friday and Christmas Day",
-            "Open Monday - Thursday 8am - 6pm; Friday 8am - 8pm; Saturday 8am - 5pm, Sunday 9am - 5pm"
+            "Open Monday - Thursday 9am – 6pm, Friday 10am – 8pm, Saturday 9am – 5pm, Sunday 10am – 5pm, Public Holidays 11am – 5pm",
+            "Open Daily, 10am - 5pm. Closed Good Friday and Christmas Day",
+            "Open Monday - Thursday 8am - 6pm, Friday 8am - 8pm, Saturday 8am - 5pm, Sunday 9am - 5pm"
     };
 
     String[] description={
             "Cook's cottage was built in 1755 and it is the oldest building in Australia. The cottage was originally built and located in Yokshire, England and built by Captain James Cooks' parent. In 1934, The cottage was relocated by Sir Russell Grimware. To bring the cottage over to Australia, every brick was numbered and packed.",
             "Located next to the Botanical Gardens and surrounded by Kings Domain, The Governor of Victoria uses Government House as their office and official residence. Between 1901 and 1930, it was used as the official residence of the Governor-General of Australia. It is the largest Government House in the former British Empire. The land for Government House was set aside in 1841, the surrounding landscape was completed in 1857. Construction on Government house began in 1871 and was completed in 1876.",
-            "The former Old Customs house was restore and reopened as the Imigration Museum in 1998. It is the former office of Melbourne's immigration and customs and is full of real stories of people that migrated to Victoria. Inside the museum, you will find two levels of galleries that consists of temporary and permanent exhibitions. The Tribute Garden honours immigrants from over 90 different countries.",
+            "The former Old Customs house was restore and reopened as the Immigration Museum in 1998. It is the former office of Melbourne's immigration and customs and is full of real stories of people that migrated to Victoria. Inside the museum, you will find two levels of galleries that consists of temporary and permanent exhibitions. The Tribute Garden honours immigrants from over 90 different countries.",
             "Located on Port Phillip Bay, Luna Park has been the destination for families and visitors for over a century. Luna Park celebrated 100 years in 2012. It is full of heritage listed attracts and new rides to cater for all different ages. The most famous of the Park’s attractions is its Scenic Railway Roller Coaster, a large wooden coaster, that takes its passengers at high speed, around the perimeter of the Park. The Roller Coaster holds the title of the oldest, continually operating roller cosaster in the world and the only roller coasts to still have a standing brakeman that is in control of its moving carriages.",
             "The Melbourne Museum provides visitors an insight into the life in Victoria. It boasts permanent collections as well as temporary exhibitons from all over the world. Visitors will get to experience Victoria's natural environment, culter and history. The museum was previously located at the State Library Building but closed in 1997, but relocated to the Carlton Gardens in a brand new building on the 21st of October 2000.",
             "Visitors can see numerous components of typesetting and printing, including: Gutenberg's invention of movable types, Typesetting (by hand) with movable types, Linotype linecaster (hot metal composition), Ludlow Typograph linecaster (hot metal for large or fancy type), Poster types (usu. wood) for large lettering, engravings needed to print an illustration, stereotypes (duplicates of typesettings), the hand press as used by early printers, the cylinder press (more modern process), posters, books and other works printed in our studio by visiting artists, Library of Books as Artefacts, where the interest is not \"Who wrote it?\" but \"Who printed it, and how?\", Archival collections of thousands of artefacts and documents, illustrating the day-to-day work of the printing trade Slide show on traditional printing and the Museum's collections and programs.",
             "The Melbourne Town Hall was building in the heart of Melbourne, opening in 1870. It hosts theatre, weddings, receptions, exhibitons and cultural and civis activity. Built from bluestone and Tasmanian freestone, the building features a clock tower and fine masonry. Besides the Council Chambers, the Town Hall has a large auditorium, which was remodelled following a fire in 1925 and includes panels decorated with sepia figures. The auditorium’s Grand Organ features cutting-edge performances by a range of artists including Philip Glass, Paul Grabowski and the Necks. A free lunchtime concert series has been running since 2003, and the Grand Organ Museum allows visitors the opportunity to learn more about the organ.",
-            "The Chinese Museum, located in Chinatown, has five floors of artworks, artefacts, fashion, books, photographs and jade. Contemporary exhibits include a new Chinatown Visitor Centre, a Dragon Gallery housing the Museum’s four dragons, the “Finding Gold” interactive display, research library, Bridge of Memories exhibition and a top floor filled with treasures. The Chinese Museum tells Australia’s 200-year Chinese history through artefacts as well as the stories of recent arrivals from all parts of the Asia Pacific region since the 1950s.",
+            "The Chinese Museum, located in Chinatown, has five floors of artworks, artefacts, fashion, books, photographs and jade. Contemporary exhibits include a new Chinatown Visitor Centre, a Dragon Gallery housing the Museum’s four dragons, the \"Finding Gold\" interactive display, research library, Bridge of Memories exhibition and a top floor filled with treasures. The Chinese Museum tells Australia’s 200-year Chinese history through artefacts as well as the stories of recent arrivals from all parts of the Asia Pacific region since the 1950s.",
             "Looks can be deceiving because the Old Melbourne Gaol is one of Melbourne's best historical places and truly worth a visit. Old Melbourne Gaol dominated the Melbourne skyline as a symbol of authority when it was built in the mid 1800s.",
             "Parliament House has been the seat of the Parliament of Victoria since 1855, except from 1901 to 1928 when it was the Parliament of Australia. From 1901 to 1928 Parliament House was the home of the Commonwealth Parliament, there were long delays in finding a suitable site and for construction to commence. In the meantime, the Victorian Parliament met in the Royal Exhibition Building in Carlton. It is the largest 19th century public building in Australia and one of the finest examples of the civic architecture of the British Empire period anywhere in the world.",
             "Polly Woodside is a Belfast-built, three-mast, iron-hulled barque and is the central feature of the Melbourne South Wharf precient. Built in Belfast by William J. Woodside and it was launched in 1885.",
@@ -146,21 +146,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     };
 
     String[] photo={
-            "cooks_cottage.jpg",
-            "government_house.jpg",
-            "immigration_museum.jpg",
-            "luna_park.jpg",
+            "cooks_cottage",
+            "government_house",
+            "immigration_museum",
+            "luna_park",
             "melbourne_museum",
             "melbourne_museum_of_printing",
-            "melbourne_town_hall.jpg",
-            "melbourne_chinese_museum.jpg",
-            "old_melbourne_gaol.jpg",
-            "parliament_house.jpg",
-            "polly_woodside.jpg",
-            "rippon_lea_house.jpg",
-            "royal_arcade.jpg",
-            "shrine_of_remembrance.jpg",
-            "the_block_arcade.jpg"
+            "melbourne_town_hall",
+            "melbourne_chinese_museum",
+            "old_melbourne_gaol",
+            "parliament_house",
+            "polly_woodside",
+            "rippon_lea_house",
+            "royal_arcade",
+            "shrine_of_remembrance",
+            "the_block_arcade"
     };
 
     @Override
@@ -189,8 +189,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             values.put(MySQLiteHelper.COLUMN_OPENING_HOURS,hours[i]);
             values.put(MySQLiteHelper.COLUMN_DESCRIPTION, description[i]);
             values.put(MySQLiteHelper.COLUMN_PHOTO, photo[i]);
-            // insert data into the database from our ContentValues object
-            db.insert(MySQLiteHelper.TABLE_NAME, null, values);
+            // insert data into the database from our ContentValues object and avoiding duplicate entries
+            // by using SQLiteDatabase.CONFLICT_IGNORE
+                /*Stack overflow, available at: http://stackoverflow.com/questions/26326696/how-to-prevent-to-insert-duplicate-value-in-sqlite-databse-if-duplicate-then-ov
+                * Accessed 5 Dec 16*/
+            db.insertWithOnConflict(MySQLiteHelper.TABLE_NAME, null, values,SQLiteDatabase.CONFLICT_IGNORE);
         }
 
 
@@ -273,7 +276,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // create a marker for each historic places
         Marker cooksCottage_marker = mMap.addMarker(new MarkerOptions()
                 .position(cooksCottage_location)
-                .title("Cook's Cottage"));
+                .title("Cooks Cottage"));
 
         Marker govermentHouse_marker = mMap.addMarker(new MarkerOptions()
                 .position(governmentHouse_location)
@@ -301,7 +304,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Marker melbourneChineseMuseum_marker = mMap.addMarker(new MarkerOptions()
                 .position(melbourneChineseMuseum_location)
-                .title("Melbourne's Chinese Museum"));
+                .title("Melbourne Chinese Museum"));
 
         Marker oldMelbourneGaol_marker = mMap.addMarker(new MarkerOptions()
                 .position(oldMelbourneGaol_location)
@@ -343,7 +346,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 switch(marker.getTitle()){
 
-                    case "Cook's Cottage":
+                    case "Cooks Cottage":
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
@@ -371,7 +374,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
-                    case "Melbourne's Chinese Museum":
+                    case "Melbourne Chinese Museum":
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
