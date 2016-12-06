@@ -71,5 +71,4 @@ public class MainActivity extends TabActivity {
         menuTab.setCurrentTab(1);
     }
 
-
 }
