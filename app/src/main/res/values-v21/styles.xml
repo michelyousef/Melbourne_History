@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryDark">@color/purple</item>
         <item name="colorAccent">@color/grey</item>
-        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/purple</item>
         <item name="android:colorForeground">@color/purple</item>
         <item name="android:statusBarColor">@color/purple</item>
         <item name="android:textColorPrimary">@color/white</item>
