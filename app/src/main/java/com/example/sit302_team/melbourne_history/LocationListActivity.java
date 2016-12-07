@@ -13,7 +13,7 @@ public class LocationListActivity extends ListActivity {
 
     // Initialise variable
     Context context;
-    String[] locations =  new String[] {"Cooks Cottage", "Government House", "Immigration Museum", "Luna Park", "Melbourne Museum", "Melbourne Museum of Printing", "Melbourne Town Hall", "Melbourne Chinese Museum", "Old Melbourne Gaol", "Parliament House", "Polly Woodside Tall Ship", "Ripppon Lea House & Gardens", "Royal Arcade", "Shrine of Remembrance", "The Block Arcade"};
+    String[] locations =  new String[] {"Cooks Cottage", "Government House", "Immigration Museum", "Luna Park", "Melbourne Museum", "Melbourne Museum of Printing", "Melbourne Town Hall", "Melbourne Chinese Museum", "Old Melbourne Gaol", "Parliament House", "Polly Woodside Tall Ship", "Rippon Lea House & Gardens", "Royal Arcade", "Shrine of Remembrance", "The Block Arcade"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
