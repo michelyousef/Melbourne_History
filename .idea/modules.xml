@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Melbourne_History.iml" filepath="$PROJECT_DIR$/Melbourne_History.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Melbourne_History7.iml" filepath="$PROJECT_DIR$/Melbourne_History7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Melbourne_History8.iml" filepath="$PROJECT_DIR$/Melbourne_History8.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
