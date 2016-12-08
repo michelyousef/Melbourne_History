@@ -2,6 +2,7 @@ package com.example.sit302_team.melbourne_history;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class AboutUs extends AppCompatActivity {
 
@@ -10,4 +11,5 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
     }
+
 }

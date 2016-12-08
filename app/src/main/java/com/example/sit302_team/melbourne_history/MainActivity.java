@@ -70,4 +70,5 @@ public class MainActivity extends TabActivity {
         //set map tab as the default tab
         menuTab.setCurrentTab(1);
     }
+
 }
