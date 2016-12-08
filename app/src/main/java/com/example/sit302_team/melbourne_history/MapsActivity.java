@@ -93,21 +93,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     };
 
     String[] website = {
-            "www.thatsmelbourne.com.au/PlacesToGo/CooksCottage/Pages/Cookscottage.aspx",
-            "www.governor.vic.gov.au/government-house",
-            "museumvictoria.com.au/immigrationmuseum/",
-            "lunapark.com.au",
-            "museumvictoria.com.au/melbournemuseum/visiting",
-            "www.mmop.org.au/welcome.htm",
-            "www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx",
-            "chinesemuseum.com.au",
-            "www.oldmelbournegaol.com.au",
-            "www.parliament.vic.gov.au/visit",
-            "www.nationaltrust.org.au/places/polly-woodside/",
-            "www.ripponleaestate.com.au",
-            "royalarcade.com.au",
-            "www.shrine.org.au/Home",
-            "theblock.com.au"};
+            "http://www.onlymelbourne.com.au/cooks-cottage-681#.WEkqePl97b0",
+            "http://www.governor.vic.gov.au/government-house",
+            "https://museumvictoria.com.au/immigrationmuseum/",
+            "https://lunapark.com.au/",
+            "https://museumvictoria.com.au/melbournemuseum/visiting",
+            "http://www.mmop.org.au/welcome.htm",
+            "http://www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx",
+            "http://chinesemuseum.com.au/",
+            "http://www.oldmelbournegaol.com.au/",
+            "http://www.parliament.vic.gov.au/visit",
+            "https://www.nationaltrust.org.au/places/polly-woodside/",
+            "http://www.ripponleaestate.com.au/",
+            "http://royalarcade.com.au/",
+            "http://www.shrine.org.au/Home",
+            "http://theblock.com.au/"};
 
     String[] hours={
             "Open Daily, 9am - 5pm. Closed Christmas Day.",

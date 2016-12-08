@@ -1,6 +1,7 @@
 package com.example.sit302_team.melbourne_history;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -18,6 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class LocationDetailsActivity extends AppCompatActivity {
     // creating variables to represent the UI widgets
     TextView myTextView;
+    TextView websiteTextView;
     ImageView myImageView;
 
     // creating MySQLite open helper object
@@ -41,7 +44,9 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
         /*assigning and linking the local variable myTextView  in the java code
             to our TextView widget*/
+        websiteTextView = (TextView) findViewById(R.id.websiteDetails);
         myTextView = (TextView) findViewById(R.id.textViewDetails);
+
         /*assigning and linking the local variable myImageView  in the java code
             to our ImageView widget*/
         myImageView = (ImageView) findViewById(R.id.imageView);
@@ -77,13 +82,41 @@ public class LocationDetailsActivity extends AppCompatActivity {
         https://developer.android.com/guide/topics/resources/string-resource.html
         accessed 7 Dec 16*/
 
+        websiteTextView.setText(Html.fromHtml("<html><body style=\"font-family:georgia,Times,arial;\"><h3>Website: </h3><u>"+ website +"</u></body></html>"));
+        websiteTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LocationDetailsActivity.this, website, Toast.LENGTH_SHORT).show();
+
+                // set the website url
+                // String urlWithHTTP = "http://www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx";
+                // String urlWithoutHTTP = "www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx"
+                /*
+
+                Yousef, I'm having an error here, when you click on the link, the app will stop responding
+                I found out that the error comes from the url. Because the url that is store in the database
+                is not complete (without http).
+                So what i did is, i changed each website url in the maps activity so that it wil store the complete url
+                Problem is that the database is not updated, can you update the database?
+
+
+                */
+
+
+                // create the browser intent and start activity (opening phone browser)
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));
+                // to test you can try to change the website variable into urlWithHTTP or urlWithoutHTTP
+                // without http will give you the error
+                startActivity(browserIntent);
+
+            }
+        });
+
         myTextView.setText(Html.fromHtml("<html><body style=\"font-family:georgia,Times,arial;\"><h2>Address: </h2>" + address
                 + "<h3>Phone: </h3>" + phone
-                + "<h3>Website: </h3>" + website
                 + "<h3>Opening Hours: </h3>" + hours
                 + "<h3>Description: </h3>" + description
                 + "</body></html>"));
-
 
         /*How to pass a variable to R.drawable.variableName, Stack Overflow, available at:
         * http://stackoverflow.com/questions/5760751/android-variable-passed-for-r-drawable-variablevalue

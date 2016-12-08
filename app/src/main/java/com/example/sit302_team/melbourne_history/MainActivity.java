@@ -29,6 +29,7 @@ public class MainActivity extends TabActivity {
         tabSpec1.setContent(R.id.LocationsTab);
 
         // set the title and icon
+        // Reference for ic_location icon: icons8, https://icons8.com/web-app/3723/marker#filled
         View tabIndicator1 = LayoutInflater.from(this).inflate(R.layout.tab_indicator, menuTab.getTabWidget(), false);
         ((TextView) tabIndicator1.findViewById(R.id.tab_title)).setText(R.string.tab1Name);
         ((ImageView) tabIndicator1.findViewById(R.id.tab_icon)).setImageResource(R.mipmap.ic_location);
@@ -41,6 +42,7 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec tabSpec2 = menuTab.newTabSpec("Map");
         tabSpec2.setContent(R.id.MapTab);
 
+        // Reference for ic_map icon: icons8, https://icons8.com/web-app/3779/map-marker
         // set the title and icon
         View tabIndicator2 = LayoutInflater.from(this).inflate(R.layout.tab_indicator, menuTab.getTabWidget(), false);
         ((TextView) tabIndicator2.findViewById(R.id.tab_title)).setText(R.string.tab2Name);
@@ -55,6 +57,7 @@ public class MainActivity extends TabActivity {
         tabSpec3.setContent(R.id.AboutUsTab);
 
         // set the title and icon
+        // Reference for ic_about_us icon: icons8, https://icons8.com/web-app/23264/user#filled
         View tabIndicator3 = LayoutInflater.from(this).inflate(R.layout.tab_indicator, menuTab.getTabWidget(), false);
         ((TextView) tabIndicator3.findViewById(R.id.tab_title)).setText(R.string.tab3Name);
         ((ImageView) tabIndicator3.findViewById(R.id.tab_icon)).setImageResource(R.mipmap.ic_about_us);
