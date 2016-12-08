@@ -82,31 +82,14 @@ public class LocationDetailsActivity extends AppCompatActivity {
         https://developer.android.com/guide/topics/resources/string-resource.html
         accessed 7 Dec 16*/
 
+        // when website text view is clicked, open the website from the phone browser
         websiteTextView.setText(Html.fromHtml("<html><body style=\"font-family:georgia,Times,arial;\"><h3>Website: </h3><u>"+ website +"</u></body></html>"));
         websiteTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LocationDetailsActivity.this, website, Toast.LENGTH_SHORT).show();
-
-                // set the website url
-                // String urlWithHTTP = "http://www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx";
-                // String urlWithoutHTTP = "www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx"
-                /*
-
-                Yousef, I'm having an error here, when you click on the link, the app will stop responding
-                I found out that the error comes from the url. Because the url that is store in the database
-                is not complete (without http).
-                So what i did is, i changed each website url in the maps activity so that it wil store the complete url
-                Problem is that the database is not updated, can you update the database?
-
-
-                */
-
 
                 // create the browser intent and start activity (opening phone browser)
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));
-                // to test you can try to change the website variable into urlWithHTTP or urlWithoutHTTP
-                // without http will give you the error
                 startActivity(browserIntent);
 
             }
