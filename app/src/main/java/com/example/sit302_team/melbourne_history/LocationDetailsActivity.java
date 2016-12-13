@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -187,5 +189,45 @@ public class LocationDetailsActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN);}
+    }
+
+    // inflate the tool bar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+         Bundle myBundle = getIntent().getExtras();
+        locationPassed = myBundle.getString("name", "");
+        if (!mySQLiteOpenHelper.isFav(locationPassed)){
+            menu.findItem(R.id.main_menu_option1).setIcon(R.mipmap.ic_favorite_border_black_48dp);}
+        return true;
+    }
+
+    // option in the menu bar is selected
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // getting the item selected
+        int itemId = item.getItemId();
+
+        // using switch to determine the action
+        switch (itemId){
+
+            // menu option1
+            case R.id.main_menu_option1:
+                Bundle myBundle = getIntent().getExtras();
+                locationPassed = myBundle.getString("name", "");
+                if (mySQLiteOpenHelper.isFav(locationPassed)){
+                    if (mySQLiteOpenHelper.updatedata(locationPassed,0)){
+                        item.setIcon(R.mipmap.ic_favorite_border_black_48dp);}
+                    }
+                else{
+                    if (mySQLiteOpenHelper.updatedata(locationPassed, 1)) {
+                        item.setIcon(R.mipmap.ic_favorite_black_48dp);
+                    }
+                    break;
+                    }
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -8,6 +8,6 @@
     <item android:id="@+id/main_menu_option1"
         app:showAsAction="ifRoom"
         android:title="@string/menu1"
-        android:icon="@mipmap/ic_favorites"/>
+        android:icon="@mipmap/ic_favorite_black_48dp"/>
 
 </menu>
