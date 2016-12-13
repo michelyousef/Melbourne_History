@@ -8,14 +8,18 @@ package com.example.sit302_team.melbourne_history;
 * References:
 *  1) SIT207 Lectures and weekly tutorials, School of IT, Deakin University
 * */
+
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
     // declaring the database table name and column names
-    public static final String TABLE_NAME  = "places";
+    public static final String TABLE_NAME = "places";
     public static final String COLUMN_LOCATION = "location";
     public static final String COLUMN_ADDRESS = "address";
     public static final String COLUMN_PHONE = "phone";
@@ -23,18 +27,20 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_OPENING_HOURS = "hours";
     public static final String COLUMN_DESCRIPTION = "description";
     public static final String COLUMN_PHOTO = "photo";
-
-
+    public static final String COLUMN_FAV = "favourites";
+    public static final String COLUMN_ICON = "icon";
 
 
     // declaring database name and version
     private static final String DATABASE_NAME = "placesDatabase.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_NAME + "( "  + COLUMN_LOCATION +" text primary key, "+COLUMN_ADDRESS +" text not null, "+ COLUMN_PHONE
-            + " text not null, "+COLUMN_WEBSITE +" text not null, "+COLUMN_OPENING_HOURS +" text not null, "+COLUMN_DESCRIPTION +" text not null, "+COLUMN_PHOTO+" text not null);";
+            + TABLE_NAME + "( " + COLUMN_LOCATION + " text primary key, " + COLUMN_ADDRESS + " text not null, " + COLUMN_PHONE
+            + " text not null, " + COLUMN_WEBSITE + " text not null, " + COLUMN_OPENING_HOURS + " text not null, " + COLUMN_DESCRIPTION
+            + " text not null, " + COLUMN_PHOTO + " text not null, " + COLUMN_FAV + " integer, " + COLUMN_ICON + " integer not null);";
+
     // declaring database constructor
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -56,5 +62,25 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+    public boolean updatedata(String loc, int fav) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_FAV, fav);
+        db.update(TABLE_NAME, contentValues, "location = ?", new String[]{loc});
+        return true;
+    }
+
+    public boolean isFav(String loc) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select " + COLUMN_FAV + " from " + TABLE_NAME + " where location = ?", new String[]{loc});
+        cursor.moveToNext();
+        if (cursor.getInt(0) == 1) {
+            cursor.close();
+            return true;
+        }
+        cursor.close();
+        return false;
+    }
 
 }

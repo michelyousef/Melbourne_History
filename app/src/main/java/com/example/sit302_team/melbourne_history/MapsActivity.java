@@ -58,7 +58,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "The Block Arcade"
     };
 
-    String[] address={
+    String[] address = {
             "Fitzroy Gardens, Wellington Parade, East Melbourne 3002",
             "Government House Drive,  Melbourne 3004",
             "400 Flinders Street, Melbourne 3000",
@@ -109,7 +109,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "http://www.shrine.org.au/Home",
             "http://theblock.com.au/"};
 
-    String[] hours={
+    String[] hours = {
             "Open Daily, 9am - 5pm. Closed Christmas Day.",
             "Open 24 hours",
             "Closed Good Friday and Christmas Day",
@@ -127,7 +127,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "Open Monday - Thursday 8am - 6pm, Friday 8am - 8pm, Saturday 8am - 5pm, Sunday 9am - 5pm"
     };
 
-    String[] description={
+    String[] description = {
             "Cook's cottage was built in 1755 and it is the oldest building in Australia. The cottage was originally built and located in Yokshire, England and built by Captain James Cooks' parent. In 1934, The cottage was relocated by Sir Russell Grimware. To bring the cottage over to Australia, every brick was numbered and packed.",
             "Located next to the Botanical Gardens and surrounded by Kings Domain, The Governor of Victoria uses Government House as their office and official residence. Between 1901 and 1930, it was used as the official residence of the Governor-General of Australia. It is the largest Government House in the former British Empire. The land for Government House was set aside in 1841, the surrounding landscape was completed in 1857. Construction on Government house began in 1871 and was completed in 1876.",
             "The former Old Customs house was restore and reopened as the Immigration Museum in 1998. It is the former office of Melbourne's immigration and customs and is full of real stories of people that migrated to Victoria. Inside the museum, you will find two levels of galleries that consists of temporary and permanent exhibitions. The Tribute Garden honours immigrants from over 90 different countries.",
@@ -145,7 +145,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "The Block Arcade is a heritage shopping arcade located in the centre of Melbourne, one hundred years ago it was the \"place to be seen\". The arcade was designed by David C. Askew and constructured between 1891 and 1893."
     };
 
-    String[] photo={
+    String[] photo = {
             "cooks_cottage",
             "government_house",
             "immigration_museum",
@@ -163,6 +163,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "the_block_arcade"
     };
 
+    int[] icons = new int[]{R.mipmap.icon_cooks, R.mipmap.icon_gov_house, R.mipmap.icon_immi_museum, R.mipmap.icon_luna,
+            R.mipmap.icon_melb_museum, R.mipmap.icon_printing, R.mipmap.icon_town_hall, R.mipmap.icon_chinese_museum, R.mipmap.icon_gaol, R.mipmap.icon_parliament,
+            R.mipmap.icon_polly, R.mipmap.icon_rippon, R.mipmap.icon_royal, R.mipmap.icon_shrine, R.mipmap.icon_block_arcade};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,7 +182,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // by accessing getWritableDatabase() method of our myOpenHelper object
         SQLiteDatabase db = myOpenHelper.getWritableDatabase();
         //loop through the data arrays and insert it into the database
-        for (int i=0; i <15; i++) {
+        for (int i = 0; i < 15; i++) {
             // wrap the database data
             ContentValues values = new ContentValues();
             //names inside the quotes must be exactly the same as the database column names
@@ -186,14 +190,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             values.put(MySQLiteHelper.COLUMN_ADDRESS, address[i]);
             values.put(MySQLiteHelper.COLUMN_PHONE, phone[i]);
             values.put(MySQLiteHelper.COLUMN_WEBSITE, website[i]);
-            values.put(MySQLiteHelper.COLUMN_OPENING_HOURS,hours[i]);
+            values.put(MySQLiteHelper.COLUMN_OPENING_HOURS, hours[i]);
             values.put(MySQLiteHelper.COLUMN_DESCRIPTION, description[i]);
             values.put(MySQLiteHelper.COLUMN_PHOTO, photo[i]);
+            values.put(MySQLiteHelper.COLUMN_ICON, icons[i]);
             // insert data into the database from our ContentValues object and avoiding duplicate entries
             // by using SQLiteDatabase.CONFLICT_IGNORE
                 /*Stack overflow, available at: http://stackoverflow.com/questions/26326696/how-to-prevent-to-insert-duplicate-value-in-sqlite-databse-if-duplicate-then-ov
                 * Accessed 5 Dec 16*/
-            db.insertWithOnConflict(MySQLiteHelper.TABLE_NAME, null, values,SQLiteDatabase.CONFLICT_IGNORE);
+            db.insertWithOnConflict(MySQLiteHelper.TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         }
 
 
@@ -236,8 +241,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mMap.setIndoorEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
-
 
 
         // connecting button widget
@@ -344,7 +347,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onInfoWindowClick(Marker marker) {
 
-                switch(marker.getTitle()){
+                switch (marker.getTitle()) {
 
                     case "Cooks Cottage":
                         Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
@@ -432,12 +435,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
     }
+
     // Stack Overflow available at http://stackoverflow.com/questions/31016722/googleplayservicesutil-vs-googleapiavailability
     private boolean checkPlayServices() {
         GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
         int result = googleAPI.isGooglePlayServicesAvailable(this);
-        if(result != ConnectionResult.SUCCESS) {
-            if(googleAPI.isUserResolvableError(result)) {
+        if (result != ConnectionResult.SUCCESS) {
+            if (googleAPI.isUserResolvableError(result)) {
                 googleAPI.getErrorDialog(this, result,
                         PLAY_SERVICES_RESOLUTION_REQUEST).show();
                 Toast.makeText(this, "Please update Google Play Services and try again.", Toast.LENGTH_SHORT).show();
@@ -464,11 +468,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         int itemId = item.getItemId();
 
         // using switch to determine the action
-        switch (itemId){
+        switch (itemId) {
 
             // menu option1
             case R.id.main_menu_option1:
-                Toast.makeText(this, "Create favorite list activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MapsActivity.this, FavouritesActivity.class);
+                startActivity(intent);
                 break;
         }
 
@@ -476,10 +481,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // Function to focus the camera to Melbourne CBD
-    public void goToMelbourneCBD(LatLng melbourneCBDLocation){
+    public void goToMelbourneCBD(LatLng melbourneCBDLocation) {
 
         // set camera to Melbourne CBD
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(melbourneCBDLocation,15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(melbourneCBDLocation, 15));
 
         // set button text to user location (user default position in burwood)
         text = "Go To User";
@@ -488,11 +493,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // Function to focus the camera to User Location
-    public void goToUser(LatLng userLocation){
+    public void goToUser(LatLng userLocation) {
 
 
         // set camera to user location
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
 
         // set button text to melbourne CBD
         text = "Go To Melbourne CBD";
@@ -524,7 +529,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     // Function to bring user to location details activity
-    public void GoToLocationDetailsPage(String locationName){
+    public void GoToLocationDetailsPage(String locationName) {
         Intent intent = new Intent(MapsActivity.this, LocationDetailsActivity.class);
 
         // Send the marker title (the one that the user choose) to the location details activity
