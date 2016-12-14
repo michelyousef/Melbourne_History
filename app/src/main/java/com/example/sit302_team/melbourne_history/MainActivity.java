@@ -65,10 +65,26 @@ public class MainActivity extends TabActivity {
         // set the intent
         tabSpec3.setIndicator(tabIndicator3).setContent(new Intent(this, AboutUs.class));
 
+        // tab host option 4
+        // set the content
+        TabHost.TabSpec tabSpec4 = menuTab.newTabSpec("Favourites");
+        tabSpec4.setContent(R.id.FaveTab);
+
+        // set the title and icon
+        // Reference for ic_about_us icon: icons8, https://icons8.com/web-app/23264/user#filled
+        View tabIndicator4 = LayoutInflater.from(this).inflate(R.layout.tab_indicator, menuTab.getTabWidget(), false);
+        ((TextView) tabIndicator4.findViewById(R.id.tab_title)).setText(R.string.tab4Name);
+        ((ImageView) tabIndicator4.findViewById(R.id.tab_icon)).setImageResource(R.mipmap.ic_fave);
+
+        // set the intent
+        tabSpec4.setIndicator(tabIndicator4).setContent(new Intent(this, FavouritesActivity.class));
+
+
         // add all tab to the tab host
         menuTab.addTab(tabSpec1);
         menuTab.addTab(tabSpec2);
         menuTab.addTab(tabSpec3);
+        menuTab.addTab(tabSpec4);
 
         //set map tab as the default tab
         menuTab.setCurrentTab(1);

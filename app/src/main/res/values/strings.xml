@@ -9,6 +9,7 @@
     <string name="tab1Name">Locations</string>
     <string name="tab2Name">Map</string>
     <string name="tab3Name">About Us</string>
+    <string name="tab4Name">Favourites</string>
     <string name="location_name">Location 1</string>
     <string name="location_list_title">Historic Locations</string>
     <string name="photo">Photo</string>

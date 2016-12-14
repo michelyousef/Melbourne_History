@@ -62,6 +62,22 @@
 
             </LinearLayout>
 
+            <!-- Fave tab -->
+            <LinearLayout
+                android:id="@+id/FaveTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
         </FrameLayout>
 
         <!-- tab widget -->
