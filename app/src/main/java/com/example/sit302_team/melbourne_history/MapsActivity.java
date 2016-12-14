@@ -453,33 +453,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         return true;
     }
 
-    // inflate the tool bar
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    // option in the menu bar is selected
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        // getting the item selected
-        int itemId = item.getItemId();
-
-        // using switch to determine the action
-        switch (itemId) {
-
-            // menu option1
-            case R.id.main_menu_option1:
-                Intent intent = new Intent(MapsActivity.this, FavouritesActivity.class);
-                startActivity(intent);
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     // Function to focus the camera to Melbourne CBD
     public void goToMelbourneCBD(LatLng melbourneCBDLocation) {
 
