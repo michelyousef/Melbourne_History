@@ -5,17 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.sit302_team.melbourne_history.FavouritesActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/location_list_title"
-        android:background="@color/white"
-        android:gravity="center"
-        android:text="@string/favourites"
-        android:textSize="25sp"
-        android:padding="5dp"
-        android:textColor="@color/purple"
-        android:textStyle="normal|bold" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

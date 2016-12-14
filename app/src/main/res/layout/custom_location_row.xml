@@ -14,7 +14,6 @@
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:id="@+id/location_pic"
-            android:padding="5dp"
             android:src="@mipmap/app_icon"/>
 
         <!-- location name -->

@@ -58,7 +58,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
         Bundle myBundle = getIntent().getExtras();
         locationPassed = myBundle.getString("name", "");
 
-
             /*How to set the title bar programmatically, Stack overflow, avaialable at:
             * http://stackoverflow.com/questions/12372485/how-to-set-the-titlebar-in-every-activity-programmatically
             * Accessed 6 Dec 16*/
@@ -175,20 +174,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
         );
         AppIndex.AppIndexApi.end(mClient, viewAction);
         mClient.disconnect();
-    }
-
-    //Remove bottom navigation bar (full screen mode)
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN);}
     }
 
     // inflate the tool bar
