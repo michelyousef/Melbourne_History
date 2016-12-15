@@ -39,6 +39,7 @@
                     android:id="@+id/aboutUsPart01"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/green"
+                    android:textStyle="bold"
                     android:text="@string/AboutUsParagraph01Title"
                     android:textSize="20sp"
                     android:textAlignment="center"
@@ -47,7 +48,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/aboutUsPar1"
-                    android:layout_marginTop="10dp"
                     android:textColor="@color/green"
                     android:text="@string/AboutUsParagraph01Text"
                     android:textSize="15sp"
@@ -69,6 +69,7 @@
                     android:id="@+id/aboutUsPart02"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/green"
+                    android:textStyle="bold"
                     android:text="@string/AboutUsParagraph02Title"
                     android:textSize="20sp"
                     android:textAlignment="center"
@@ -77,7 +78,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/aboutUsPar2_1"
-                    android:layout_marginTop="10dp"
                     android:textColor="@color/green"
                     android:text="@string/AboutUsParagraph02Text_01"
                     android:textSize="15sp"
@@ -86,7 +86,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/aboutUsPar2_2"
-                    android:layout_marginTop="10dp"
                     android:textColor="@color/green"
                     android:text="@string/AboutUsParagraph02Text_02"
                     android:textSize="15sp"
@@ -95,9 +94,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/aboutUsPar2_3"
-                    android:layout_marginTop="10dp"
                     android:textColor="@color/green"
                     android:text="@string/AboutUsParagraph02Text_03"
+                    android:textSize="15sp"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <!-- paragraph 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:background="@color/white"
+                android:alpha="0.8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aboutUsPart03"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/green"
+                    android:text="@string/AboutUsParagraph03Title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aboutUsPar3_1"
+                    android:textColor="@color/green"
+                    android:text="@string/AboutUsParagraph03Text_01"
+                    android:textSize="15sp"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aboutUsPar3_2"
+                    android:textColor="@color/green"
+                    android:text="@string/AboutUsParagraph03Text_02"
                     android:textSize="15sp"
                     android:padding="10dp"/>
             </LinearLayout>
