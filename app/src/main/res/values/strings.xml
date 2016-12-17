@@ -47,6 +47,7 @@
 
     <string name="AboutUsParagraph03Title">About the Team</string>
     <string name="AboutUsParagraph03Text_01">Our team has consisted of 4 IT students from Deakin University currently enrolled in SIT302 - Project</string>
-    <string name="AboutUsParagraph03Text_02">The team included 3 developers (Ryan, Michel and Michael) and the project team leader/UI designer (Nicole).</string>
+    <string name="AboutUsParagraph03Text_02">The team includes 3 developers (Ryan, Michel and Michael) and the project team leader/UI designer (Nicole).</string>
+    <string name="referencesButtonText">References</string>
 
 </resources>

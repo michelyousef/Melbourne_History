@@ -21,15 +21,10 @@
                 android:id="@+id/LocationsTab"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
-
-
                 </RelativeLayout>
-
             </LinearLayout>
 
             <!-- Map tab -->
@@ -38,13 +33,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical" >
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
-
                 </RelativeLayout>
+            </LinearLayout>
 
+
+
+            <!-- Fave tab -->
+            <LinearLayout
+                android:id="@+id/FaveTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </RelativeLayout>
             </LinearLayout>
 
             <!-- About Us tab -->
@@ -52,29 +57,10 @@
                 android:id="@+id/AboutUsTab"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
-
-
                 </RelativeLayout>
-
-            </LinearLayout>
-
-            <!-- Fave tab -->
-            <LinearLayout
-                android:id="@+id/FaveTab"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-
-                </RelativeLayout>
-
             </LinearLayout>
 
 

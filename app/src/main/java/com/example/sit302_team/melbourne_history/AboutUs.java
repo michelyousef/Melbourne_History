@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.lang.ref.Reference;
@@ -17,8 +18,8 @@ public class AboutUs extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
 
         //On Click Reference Button
-        ImageButton referenceButton;
-        referenceButton = (ImageButton) findViewById(R.id.referenceButton);
+        Button referenceButton;
+        referenceButton = (Button) findViewById(R.id.referenceButton);
         referenceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
