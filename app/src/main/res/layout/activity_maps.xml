@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userTrackerButton"
+        android:text="@string/go_to_melbourene_cbd"
         android:layout_gravity="center_horizontal|bottom"
         android:padding="10dp"
         android:textColor="@color/purple"

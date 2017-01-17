@@ -15,7 +15,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
     // declaring the database table name and column names
@@ -62,7 +61,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    //Update the data in favourites column to add the location to or remove it from favourites
     public boolean updatedata(String loc, int fav) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -71,10 +70,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    //Check if the location is in favourites
     public boolean isFav(String loc) {
         SQLiteDatabase db = this.getReadableDatabase();
+
+        //Check the value in favourites column
         Cursor cursor = db.rawQuery("select " + COLUMN_FAV + " from " + TABLE_NAME + " where location = ?", new String[]{loc});
         cursor.moveToNext();
+
+        //If the value is 1, the location is in favourites, return true
         if (cursor.getInt(0) == 1) {
             cursor.close();
             return true;

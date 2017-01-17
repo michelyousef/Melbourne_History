@@ -4,14 +4,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class FavouritesActivity extends ListActivity {
@@ -28,14 +21,18 @@ public class FavouritesActivity extends ListActivity {
         context = this;
         lv = (ListView) findViewById(android.R.id.list);
         FavouritesAdapter favList = new FavouritesAdapter(this, locations, locationIcons);
-        // set list adapter
+
+        //Set list adapter
         lv.setAdapter(favList);
 
+        //Open database and search all locations with "1" in Favourites column
         mySQLiteHelper = new MySQLiteHelper(FavouritesActivity.this);
         SQLiteDatabase db = mySQLiteHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + MySQLiteHelper.TABLE_NAME
                         + " WHERE " + MySQLiteHelper.COLUMN_FAV + "= ?",
                 new String[]{"1"});
+
+        //Add the locations and icons to the favourites list
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             locations[i] = cursor.getString(0);

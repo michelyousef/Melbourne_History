@@ -18,11 +18,11 @@ public class FavouritesAdapter extends BaseAdapter {
 
     // Custom adapter for location list activity
 
+    private static LayoutInflater inflater = null;
     String[] places;
     int[] icons;
     Context context;
     private List<String> list = new ArrayList<String>();
-    private static LayoutInflater inflater = null;
 
     // Taking the values that is passed by the activity that call this constructor
     public FavouritesAdapter(FavouritesActivity favouritesActivity, String[] location_names, int[] location_images) {
@@ -50,12 +50,6 @@ public class FavouritesAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
-    }
-
-    // initialise a holder class
-    public class Holder {
-        TextView text;
-        ImageView icon;
     }
 
     // For all the string that is passed, show it in the layout that is prepared inside the custom_team_row
@@ -106,6 +100,12 @@ public class FavouritesAdapter extends BaseAdapter {
 
         // start intent
         context.getApplicationContext().startActivity(intent);
+    }
+
+    // initialise a holder class
+    public class Holder {
+        TextView text;
+        ImageView icon;
     }
 
 }

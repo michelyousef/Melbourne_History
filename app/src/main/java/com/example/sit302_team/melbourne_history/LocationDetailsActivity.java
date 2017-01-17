@@ -1,19 +1,17 @@
 package com.example.sit302_team.melbourne_history;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -85,7 +83,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         accessed 7 Dec 16*/
 
         // when website text view is clicked, open the website from the phone browser
-        websiteTextView.setText(Html.fromHtml("<html><body style=\"font-family:georgia,Times,arial;\"><h3>Website: </h3><u>"+ website +"</u></body></html>"));
+        websiteTextView.setText(Html.fromHtml("<html><body style=\"font-family:georgia,Times,arial;\"><h3>Website: </h3><u>" + website + "</u></body></html>"));
         websiteTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,10 +179,13 @@ public class LocationDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-         Bundle myBundle = getIntent().getExtras();
+        Bundle myBundle = getIntent().getExtras();
         locationPassed = myBundle.getString("name", "");
-        if (!mySQLiteOpenHelper.isFav(locationPassed)){
-            menu.findItem(R.id.main_menu_option1).setIcon(R.mipmap.ic_favorite_border_black_48dp);}
+
+        //Check if the location is in favourites. If not, change the icon white
+        if (!mySQLiteOpenHelper.isFav(locationPassed)) {
+            menu.findItem(R.id.main_menu_option1).setIcon(R.mipmap.ic_favorite_border_black_48dp);
+        }
         return true;
     }
 
@@ -196,22 +197,27 @@ public class LocationDetailsActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         // using switch to determine the action
-        switch (itemId){
+        switch (itemId) {
 
-            // menu option1
             case R.id.main_menu_option1:
+
+                //Get the location name
                 Bundle myBundle = getIntent().getExtras();
                 locationPassed = myBundle.getString("name", "");
-                if (mySQLiteOpenHelper.isFav(locationPassed)){
-                    if (mySQLiteOpenHelper.updatedata(locationPassed,0)){
-                        item.setIcon(R.mipmap.ic_favorite_border_black_48dp);}
+
+                //Check if the location is in favourites
+                if (mySQLiteOpenHelper.isFav(locationPassed)) {
+                    //If so, remove it from favourites and change the icon white
+                    if (mySQLiteOpenHelper.updatedata(locationPassed, 0)) {
+                        item.setIcon(R.mipmap.ic_favorite_border_black_48dp);
                     }
-                else{
+                } else {
+                    //If not, add it to favourites and change the icon black
                     if (mySQLiteOpenHelper.updatedata(locationPassed, 1)) {
                         item.setIcon(R.mipmap.ic_favorite_black_48dp);
                     }
                     break;
-                    }
+                }
         }
 
         return super.onOptionsItemSelected(item);

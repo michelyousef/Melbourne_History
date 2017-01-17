@@ -1,14 +1,10 @@
 package com.example.sit302_team.melbourne_history;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-
-import java.lang.ref.Reference;
 
 public class AboutUs extends AppCompatActivity {
 

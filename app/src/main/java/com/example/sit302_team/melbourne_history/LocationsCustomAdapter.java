@@ -9,29 +9,27 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class LocationsCustomAdapter extends BaseAdapter {
 
     // Custom adapter for location list activity
 
+    private static LayoutInflater inflater = null;
     String[] places;
     int[] icons;
     Context context;
 
-    private static LayoutInflater inflater = null;
+    // Taking the values that is passed by the activity that call this constructor
+    public LocationsCustomAdapter(LocationListActivity locations_activity, String[] location_names, int[] location_icons) {
+        places = location_names;
+        icons = location_icons;
+        context = locations_activity;
 
-        // Taking the values that is passed by the activity that call this constructor
-        public LocationsCustomAdapter(LocationListActivity locations_activity, String[] location_names, int[] location_icons) {
-            places = location_names;
-            icons = location_icons;
-            context = locations_activity;
+        // Prepare for rendering
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            // Prepare for rendering
-            inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        }
+    }
 
     // show as many as the length of the names array
     @Override
@@ -49,12 +47,6 @@ public class LocationsCustomAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
-    }
-
-    // initialise a holder class
-    public class Holder {
-        TextView text;
-        ImageView icon;
     }
 
     // For all the string that is passed, show it in the layout that is prepared inside the custom_team_row
@@ -89,7 +81,7 @@ public class LocationsCustomAdapter extends BaseAdapter {
     }
 
     // Function to bring user to location details activity
-    public void GoToLocationDetailsPage(String locationName){
+    public void GoToLocationDetailsPage(String locationName) {
         Intent intent = new Intent(context, LocationDetailsActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // use flag activity in order to call a new activity from an adapter activity
 
@@ -100,6 +92,12 @@ public class LocationsCustomAdapter extends BaseAdapter {
 
         // start intent
         context.getApplicationContext().startActivity(intent);
+    }
+
+    // initialise a holder class
+    public class Holder {
+        TextView text;
+        ImageView icon;
     }
 
 }
