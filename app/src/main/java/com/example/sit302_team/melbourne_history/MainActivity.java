@@ -2,7 +2,6 @@ package com.example.sit302_team.melbourne_history;
 
 import android.app.TabActivity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,7 @@ public class MainActivity extends TabActivity {
         setContentView(R.layout.activity_main);
 
         // Create tab host and connect it to the tab host widget
-        TabHost menuTab = (TabHost)findViewById(android.R.id.tabhost); // initiate TabHost
+        TabHost menuTab = (TabHost) findViewById(android.R.id.tabhost); // initiate TabHost
 
         // setup
         menuTab.setup();

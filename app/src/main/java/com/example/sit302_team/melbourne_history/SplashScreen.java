@@ -12,14 +12,14 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
                     sleep(3000);
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
-                    Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                } finally {
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                 }
             }
@@ -45,6 +45,7 @@ public class SplashScreen extends Activity {
                             | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN);}
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        }
     }
 }
