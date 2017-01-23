@@ -11,6 +11,7 @@
     <string name="tab3Name">About Us</string>
     <string name="tab4Name">Favourites</string>
     <string name="location_name">Location 1</string>
+    <string name="location_description">Description</string>
     <string name="location_list_title">Historic Locations</string>
     <string name="photo">Photo</string>
     <string name="about_Melbourne_activity">About Us</string>
@@ -52,5 +53,6 @@
     <string name="require_permission">This app requires location permissions to be granted</string>
     <string name="go_to_setting">Go to Setting to grant permissions</string>
     <string name="go_to_melbourene_cbd">Go To Melbourene CBD</string>
+    <string name="icon">Icon</string>
 
 </resources>

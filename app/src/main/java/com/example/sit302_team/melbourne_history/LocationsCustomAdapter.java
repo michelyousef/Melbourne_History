@@ -17,12 +17,14 @@ public class LocationsCustomAdapter extends BaseAdapter {
 
     private static LayoutInflater inflater = null;
     String[] places;
+    String[] descriptions;
     int[] icons;
     Context context;
 
     // Taking the values that is passed by the activity that call this constructor
-    public LocationsCustomAdapter(LocationListActivity locations_activity, String[] location_names, int[] location_icons) {
+    public LocationsCustomAdapter(LocationListActivity locations_activity, String[] location_names, String[] location_descriptions, int[] location_icons) {
         places = location_names;
+        descriptions = location_descriptions;
         icons = location_icons;
         context = locations_activity;
 
@@ -60,12 +62,14 @@ public class LocationsCustomAdapter extends BaseAdapter {
         // Inflate the single row that is created in the custom_location_row
         rowView = inflater.inflate(R.layout.custom_location_row, parent, false);
 
-        // Referencing to the widget inside the custom_team_row to the holder text and icon
+        // Referencing to the widget inside the custom_team_row to the holder text, description and icon
         holder.text = (TextView) rowView.findViewById(R.id.location_name);
+        holder.description = (TextView) rowView.findViewById(R.id.location_description);
         holder.icon = (ImageView) rowView.findViewById(R.id.location_pic);
 
         // Printing all the location name and setting all location icons
         holder.text.setText(places[position]);
+        holder.description.setText(descriptions[position]);
         holder.icon.setImageResource(icons[position]);
 
         // when an option on row view is selected
@@ -97,6 +101,7 @@ public class LocationsCustomAdapter extends BaseAdapter {
     // initialise a holder class
     public class Holder {
         TextView text;
+        TextView description;
         ImageView icon;
     }
 
