@@ -41,6 +41,5 @@ public class FavouritesActivity extends ListActivity {
         }
         cursor.close();
 
-
     }
 }

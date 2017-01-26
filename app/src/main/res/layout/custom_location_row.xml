@@ -2,23 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/locationRowContainer">
 
 
 
-        <!-- location picture -->
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="70dp"
-            android:id="@+id/location_pic"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/icon"
-            android:src="@mipmap/app_icon"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white">
+    <!-- location picture -->
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:id="@+id/location_pic"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/icon"
+        android:src="@mipmap/app_icon"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
         <!-- location name -->
         <TextView
             android:layout_width="match_parent"
@@ -31,7 +34,8 @@
             android:textSize="25sp"
             android:layout_gravity="center_vertical"
             android:textStyle="normal|bold" />
-        <!-- location name -->
+
+        <!-- location description -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,8 +46,9 @@
             android:textSize="15sp"
             android:layout_gravity="center_vertical"
             android:textStyle="normal|bold" />
-            </LinearLayout>
 
     </LinearLayout>
+
+</LinearLayout>
 
 

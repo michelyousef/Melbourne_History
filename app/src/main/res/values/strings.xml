@@ -52,7 +52,8 @@
     <string name="referencesButtonText">References</string>
     <string name="require_permission">This app requires location permissions to be granted</string>
     <string name="go_to_setting">Go to Setting to grant permissions</string>
-    <string name="go_to_melbourene_cbd">Go To Melbourene CBD</string>
+    <string name="go_to_melbourne_cbd">Go To Melbourne CBD</string>
     <string name="icon">Icon</string>
+    <string name="search">Search...</string>
 
 </resources>

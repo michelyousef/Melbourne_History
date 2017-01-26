@@ -7,36 +7,45 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 
-public class LocationsCustomAdapter extends BaseAdapter {
 
-    // Custom adapter for location list activity
+public class LocationsCustomAdapter extends BaseAdapter implements Filterable {
 
-    private static LayoutInflater inflater = null;
-    String[] places;
-    String[] descriptions;
-    int[] icons;
+    // Initializing Variable
+    private ArrayList<Location> originalValues; // Original Values
+    private ArrayList<Location> displayedValues; // Values to be displayed
+    LayoutInflater inflater;
     Context context;
 
     // Taking the values that is passed by the activity that call this constructor
-    public LocationsCustomAdapter(LocationListActivity locations_activity, String[] location_names, String[] location_descriptions, int[] location_icons) {
-        places = location_names;
-        descriptions = location_descriptions;
-        icons = location_icons;
-        context = locations_activity;
+    public LocationsCustomAdapter(LocationListActivity locations_activity, ArrayList<Location> locationArrayList) {
+        this.originalValues = locationArrayList;
+        this.displayedValues = locationArrayList;
+        this.context = locations_activity;
 
         // Prepare for rendering
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+        inflater = LayoutInflater.from(context);
     }
 
-    // show as many as the length of the names array
+    // initialise a holder class
+    public class Holder {
+        LinearLayout locationRowContainer;
+        TextView tvName;
+        TextView tvDescription;
+        ImageView ivIcon;
+    }
+
+    // show as many as the size of the display values array
     @Override
     public int getCount() {
-        return places.length;
+        return displayedValues.size();
     }
 
     // getting the item position
@@ -51,36 +60,53 @@ public class LocationsCustomAdapter extends BaseAdapter {
         return position;
     }
 
-    // For all the string that is passed, show it in the layout that is prepared inside the custom_team_row
+    // Set the information to the custom location row view
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-        // create a holder and view
-        Holder holder = new Holder();
-        View rowView;
+        // Initializing holder
+        Holder holder = null;
 
-        // Inflate the single row that is created in the custom_location_row
-        rowView = inflater.inflate(R.layout.custom_location_row, parent, false);
+        // if the convertView is null
+        if(convertView == null){
 
-        // Referencing to the widget inside the custom_team_row to the holder text, description and icon
-        holder.text = (TextView) rowView.findViewById(R.id.location_name);
-        holder.description = (TextView) rowView.findViewById(R.id.location_description);
-        holder.icon = (ImageView) rowView.findViewById(R.id.location_pic);
+            // Create a new holder
+            holder = new Holder();
 
-        // Printing all the location name and setting all location icons
-        holder.text.setText(places[position]);
-        holder.description.setText(descriptions[position]);
-        holder.icon.setImageResource(icons[position]);
+            // Inflate the single row that is created in the custom_location_row
+            convertView = inflater.inflate(R.layout.custom_location_row, parent, false);
+
+            // Referencing to the widget inside the convertView to the holder text, description and icon
+            holder.locationRowContainer = (LinearLayout)convertView.findViewById(R.id.locationRowContainer);
+            holder.tvName = (TextView)convertView.findViewById(R.id.location_name);
+            holder.tvDescription = (TextView)convertView.findViewById(R.id.location_description);
+            holder.ivIcon = (ImageView)convertView.findViewById(R.id.location_pic);
+
+            // set the convert view
+            convertView.setTag(holder);
+        }
+
+        // if convert view is not null
+        else{
+
+            // convertView get tag
+            holder = (Holder)convertView.getTag();
+        }
+
+        // Setting all the location name, descriptions and icons
+        holder.tvName.setText(displayedValues.get(position).location_name);
+        holder.tvDescription.setText(displayedValues.get(position).location_descriptions);
+        holder.ivIcon.setImageResource(displayedValues.get(position).location_icons);
 
         // when an option on row view is selected
-        rowView.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // show the location details to the user
-                GoToLocationDetailsPage(places[position]);
+                GoToLocationDetailsPage(displayedValues.get(position).location_name);
             }
         });
-        return rowView;
+        return convertView;
 
     }
 
@@ -98,11 +124,61 @@ public class LocationsCustomAdapter extends BaseAdapter {
         context.getApplicationContext().startActivity(intent);
     }
 
-    // initialise a holder class
-    public class Holder {
-        TextView text;
-        TextView description;
-        ImageView icon;
+    // displaying the filtered values or searched values
+    @Override
+    public Filter getFilter() {
+
+        Filter filter = new Filter() {
+
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint,FilterResults results) {
+
+                displayedValues = (ArrayList<Location>) results.values; // has the filtered values
+                notifyDataSetChanged();  // notifies the data with new filtered values
+            }
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults(); // Holds the results of a filtering operation in values
+                ArrayList<Location> FilteredArrList = new ArrayList<Location>();
+
+                if (originalValues == null) {
+                    originalValues = new ArrayList<Location>(displayedValues); // saves the original data in OriginalValues
+                }
+
+                /********
+                 *
+                 *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
+                 *  else does the Filtering and returns FilteredArrList(Filtered)
+                 *
+                 ********/
+                if (constraint == null || constraint.length() == 0) {
+
+                    // set the Original result to return
+                    results.count = originalValues.size();
+                    results.values = originalValues;
+
+                } else {
+                    constraint = constraint.toString().toLowerCase();
+                    for (int i = 0; i < originalValues.size(); i++) {
+                        String data = originalValues.get(i).location_name;
+
+                        // if the location name matches with the constraint)
+                        if (data.toLowerCase().startsWith(constraint.toString())) {
+
+                            // add the location row (name, desc, icon) to the array
+                            FilteredArrList.add(new Location(originalValues.get(i).location_name,originalValues.get(i).location_descriptions, originalValues.get(i).location_icons));
+                        }
+                    }
+                    // set the Filtered result to return
+                    results.count = FilteredArrList.size();
+                    results.values = FilteredArrList;
+                }
+                return results;
+            }
+        };
+        return filter;
     }
 
 }

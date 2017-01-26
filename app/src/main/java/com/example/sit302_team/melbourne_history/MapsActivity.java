@@ -28,12 +28,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+
+    // Initializing variable
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-    public Button userTrackerButton;
+    public Button melbourneCBDButton;
     public String text;
+
     // Declaring MySQLite open helper object
     MySQLiteHelper myOpenHelper;
+
     // Location data stored in separate arrays to be used in the database creation
+    // create array of location name
     String[] location = {
             "Cooks Cottage",
             "Government House",
@@ -51,6 +56,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "Shrine of Remembrance",
             "The Block Arcade"
     };
+
+    // create array of location address
     String[] address = {
             "Fitzroy Gardens, Wellington Parade, East Melbourne 3002",
             "Government House Drive,  Melbourne 3004",
@@ -67,6 +74,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "335 Bourke Street Mall,  Melbourne 3000",
             "Corner St Kilda Road and Domain Road,Melbourne 3001",
             "282 Collins Street,  Melbourne 3001"};
+
+    // create array of location contact number
     String[] phone = {
             "(03) 9658 9658",
             "(03) 9655 4211",
@@ -84,6 +93,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "(03) 9661 8100",
             "(03) 9654 5244"
     };
+
+    // create array of location website
     String[] website = {
             "http://www.onlymelbourne.com.au/cooks-cottage-681#.WEkqePl97b0",
             "http://www.governor.vic.gov.au/government-house",
@@ -100,6 +111,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "http://royalarcade.com.au/",
             "http://www.shrine.org.au/Home",
             "http://theblock.com.au/"};
+
+    // create array of location operating hours
     String[] hours = {
             "Open Daily, 9am - 5pm. Closed Christmas Day.",
             "Open 24 hours",
@@ -117,6 +130,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "Open Daily, 10am - 5pm. Closed Good Friday and Christmas Day",
             "Open Monday - Thursday 8am - 6pm, Friday 8am - 8pm, Saturday 8am - 5pm, Sunday 9am - 5pm"
     };
+
+    // create array of location descriptions
     String[] description = {
             "Cook's cottage was built in 1755 and it is the oldest building in Australia. The cottage was originally built and located in Yokshire, England and built by Captain James Cooks' parent. In 1934, The cottage was relocated by Sir Russell Grimware. To bring the cottage over to Australia, every brick was numbered and packed.",
             "Located next to the Botanical Gardens and surrounded by Kings Domain, The Governor of Victoria uses Government House as their office and official residence. Between 1901 and 1930, it was used as the official residence of the Governor-General of Australia. It is the largest Government House in the former British Empire. The land for Government House was set aside in 1841, the surrounding landscape was completed in 1857. Construction on Government house began in 1871 and was completed in 1876.",
@@ -134,6 +149,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "The Shrine is a Victoria state memorial built in 1934. It is a memorial to all of the Australians who served in war and peacekeeping operation throughout Australia's history. Immerse yourself in the real-life stories of Australians in global conflicts, with over 800 artworks, historical artefacts and personal effects featured in the Galleries of Remembrance. Special exhibitions and events are held throughout the year providing an ever changing experience.",
             "The Block Arcade is a heritage shopping arcade located in the centre of Melbourne, one hundred years ago it was the \"place to be seen\". The arcade was designed by David C. Askew and constructured between 1891 and 1893."
     };
+
+    // create array of location photos
     String[] photo = {
             "cooks_cottage",
             "government_house",
@@ -151,6 +168,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "shrine_of_remembrance",
             "the_block_arcade"
     };
+
+    // create array of location icons
     int[] icons = new int[]{R.mipmap.icon_cooks, R.mipmap.icon_gov_house, R.mipmap.icon_immi_museum, R.mipmap.icon_luna,
             R.mipmap.icon_melb_museum, R.mipmap.icon_printing, R.mipmap.icon_town_hall, R.mipmap.icon_chinese_museum, R.mipmap.icon_gaol, R.mipmap.icon_parliament,
             R.mipmap.icon_polly, R.mipmap.icon_rippon, R.mipmap.icon_royal, R.mipmap.icon_shrine, R.mipmap.icon_block_arcade};
@@ -160,16 +179,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         checkPlayServices();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         // create SQLiteOpen helper object
         myOpenHelper = new MySQLiteHelper(MapsActivity.this);
+
         //Create our database object and insert data in it using our OpenHelper object
         // by accessing getWritableDatabase() method of our myOpenHelper object
         SQLiteDatabase db = myOpenHelper.getWritableDatabase();
+
         //loop through the data arrays and insert it into the database
         for (int i = 0; i < 15; i++) {
             // wrap the database data
@@ -189,7 +212,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 * Accessed 5 Dec 16*/
             db.insertWithOnConflict(MySQLiteHelper.TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         }
-
 
     }
 
@@ -222,7 +244,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         // connecting button widget
-        userTrackerButton = (Button) findViewById(R.id.userTrackerButton);
+        melbourneCBDButton = (Button) findViewById(R.id.melbourneCBDButton);
 
         // set map type
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -391,8 +413,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        // when user tracker button is pressed
-        userTrackerButton.setOnClickListener(new View.OnClickListener() {
+        // when MELBOURNE CBD button is pressed
+        melbourneCBDButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
