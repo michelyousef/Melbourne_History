@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- TAB HOST -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1">
+
+            <!-- Locations tab -->
+            <LinearLayout
+                android:id="@+id/LocationsTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Map tab -->
+            <LinearLayout
+                android:id="@+id/MapTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+            <!-- Fave tab -->
+            <LinearLayout
+                android:id="@+id/FaveTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- About Us tab -->
+            <LinearLayout
+                android:id="@+id/AboutUsTab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <!-- tab widget -->
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-4dp"
+            android:layout_weight="0"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+</TabHost>

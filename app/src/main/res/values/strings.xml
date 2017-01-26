@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Melbourne History</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="menu1">Favorites</string>
+    <string name="newline" />
+    <string name="aboutUsPar1">Paragraph 1</string>
+    <string name="aboutUsPar2">Paragraph 2</string>
+    <string name="aboutUsTitle">About Us</string>
+    <string name="tab1Name">Locations</string>
+    <string name="tab2Name">Map</string>
+    <string name="tab3Name">About Us</string>
+    <string name="tab4Name">Favourites</string>
+    <string name="location_name">Location 1</string>
+    <string name="location_description">Description</string>
+    <string name="location_list_title">Historic Locations</string>
+    <string name="photo">Photo</string>
+    <string name="about_Melbourne_activity">About Us</string>
+    <string name="favourites">Favourites</string>
+
+    <!-- References -->
+    <string name="referencesTitle">References</string>
+    <string name="reference01">The Block Arcade (nd) The Block Arcade | Australias iconic retail precinct. [online] Theblock.com.au. Available at: http://theblock.com.au [Accessed 16 Nov. 2016]</string>
+    <string name="reference02">The Mighty Wonton (2016) Old Melbourne Gaol | National Trust Victoria. [online] Oldmelbournegaol.com.au. Available at: http://www.oldmelbournegaol.com.au [Accessed 16 Nov. 2016]</string>
+    <string name="reference03">Only Melbourne (nd) Cooks Cottage. [online] Onlymelbourne.com.au. Available at: http://www.onlymelbourne.com.au/cooks-cottage-681#.WEkqePl97b0 [Accessed 16 Nov. 2016]</string>
+    <string name="reference04">Office of the Governor (2016). Governor of Victoria - Government House. [online] Governor.vic.gov.au. Available at: http://www.governor.vic.gov.au/government-house [Accessed 16 Nov. 2016]</string>
+    <string name="reference05">Museums Victoria (2016) Immigration Museum. [online] Museums Victoria. Available at: https://museumvictoria.com.au/immigrationmuseum/ [Accessed 16 Nov. 2016]</string>
+    <string name="reference06">Luna Park Melbourne (2016) Luna Park Melbourne [online] Luna Park Melbourne. Available at: https://lunapark.com.au [Accessed 16 Nov. 2016]</string>
+    <string name="reference07">Museums Victoria (2016) Visiting: Melbourne Museum. [online] Melbourne Museum. Available at: https://museumvictoria.com.au/melbournemuseum/visiting [Accessed 16 Nov. 2016]</string>
+    <string name="reference08">Mmop (2015) Melbourne Museum of Printing - Welcome. [online] Mmop.org.au. Available at: http://www.mmop.org.au/welcome.htm [Accessed 16 Nov. 2016]</string>
+    <string name="reference09">City of Melbourne (nd) Melbourne Town Hall. [online] Thatsmelbourne.com.au. Available at: http://www.thatsmelbourne.com.au/Placestogo/MelbourneLandmarks/Historic/Pages/4452.aspx [Accessed 16 Nov. 2016]</string>
+    <string name="reference10">Chinese Museum (nd) Chinese Museum - The heritage and culture of Australias Chinese Community.. [online] Chinesemuseum.com.au. Available at: http://chinesemuseum.com.au [Accessed 16 Nov. 2016]</string>
+    <string name="reference11">Parliament of Victoria (nd) Parliament of Victoria - Visit Parliament. [online] Parliament.vic.gov.au. Available at: http://www.parliament.vic.gov.au/visit [Accessed 16 Nov. 2016]</string>
+    <string name="reference12">The National Trust (2016) Polly Woodside | National Trust. [online] Nationaltrust.org.au. Available at: https://www.nationaltrust.org.au/places/polly-woodside [Accessed 16 Nov. 2016]</string>
+    <string name="reference13">The Mighty Wonton (2016) Rippon Lea Estate | National Trust Victoria. [online] Ripponleaestate.com.au. Available at: http://www.ripponleaestate.com.au [Accessed 16 Nov. 2016]</string>
+    <string name="reference14">Royal Arcade (2016) Royal Arcade. [online] Royalarcade.com.au. Available at: http://royalarcade.com.au [Accessed 16 Dec. 2016]</string>
+    <string name="reference15">Get Started (2011) Shrine of Remembrance | Melbourne - Home. [online] Shrine.org.au. Available at: http://www.shrine.org.au/Home [Accessed 16 Nov. 2016]</string>
+    <string name="reference16">City of Melbourne, (2016). Facts about Melbourne - City of Melbourne. [online] Melbourne.vic.gov.au. Available at: http://www.melbourne.vic.gov.au/about-melbourne/melbourne-profile/Pages/facts-about-melbourne.aspx [Accessed 14 Dec. 2016].</string>
+
+    <!-- About Us Paragraphs -->
+    <string name="AboutUsParagraph01Title">General Project Description</string>
+    <string name="AboutUsParagraph01Text">Create an app that shows Melbourne as a map and allows the user to pull up historic information on points of interest.</string>
+
+    <string name="AboutUsParagraph02Title">About Melbourne</string>
+    <string name="AboutUsParagraph02Text_01">Melbourne is located on the south-east edge of Australia and is the capital city of the state of Victoria The entire Melbourne metropolitan area covers 9990.5 km2 and has a population of around 4.5 million. Melbourne hosts over a million international visitors.</string>
+    <string name="AboutUsParagraph02Text_02">Focused around a central business district, metropolitan Melbourne\'s suburbs spread more than 40 km to the south, are hemmed in by the Dandenong ranges 30 km to the east, extend up to 20 km to the north and across vast, flat basalt plains to the west.</string>
+    <string name="AboutUsParagraph02Text_03">Melbourne has a temperate climate influenced by its location at the apex of one of the world\'s largest bays, Port Phillip Bay</string>
+
+
+    <string name="AboutUsParagraph03Title">About the Team</string>
+    <string name="AboutUsParagraph03Text_01">Our team has consisted of 4 IT students from Deakin University currently enrolled in SIT302 - Project</string>
+    <string name="AboutUsParagraph03Text_02">The team includes 3 developers (Ryan, Michel and Michael) and the project team leader/UI designer (Nicole).</string>
+    <string name="referencesButtonText">References</string>
+    <string name="require_permission">This app requires location permissions to be granted</string>
+    <string name="go_to_setting">Go to Setting to grant permissions</string>
+    <string name="go_to_melbourne_cbd">Go To Melbourne CBD</string>
+    <string name="icon">Icon</string>
+    <string name="search">Search...</string>
+
+</resources>
