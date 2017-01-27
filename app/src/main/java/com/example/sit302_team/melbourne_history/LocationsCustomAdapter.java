@@ -61,11 +61,12 @@ public class LocationsCustomAdapter extends BaseAdapter implements Filterable {
     }
 
     // Set the information to the custom location row view
+    // Stack overflow, available at: http://stackoverflow.com/questions/14118309/how-to-use-search-functionality-in-custom-list-view-in-android
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         // Initializing holder
-        Holder holder = null;
+        Holder holder;
 
         // if the convertView is null
         if(convertView == null){
@@ -76,7 +77,7 @@ public class LocationsCustomAdapter extends BaseAdapter implements Filterable {
             // Inflate the single row that is created in the custom_location_row
             convertView = inflater.inflate(R.layout.custom_location_row, parent, false);
 
-            // Referencing to the widget inside the convertView to the holder text, description and icon
+            //Referencing to the widget inside the convertView to the holder text, description and icon
             holder.locationRowContainer = (LinearLayout)convertView.findViewById(R.id.locationRowContainer);
             holder.tvName = (TextView)convertView.findViewById(R.id.location_name);
             holder.tvDescription = (TextView)convertView.findViewById(R.id.location_description);
@@ -165,7 +166,7 @@ public class LocationsCustomAdapter extends BaseAdapter implements Filterable {
                         String data = originalValues.get(i).location_name;
 
                         // if the location name matches with the constraint)
-                        if (data.toLowerCase().startsWith(constraint.toString())) {
+                        if (data.toLowerCase().contains(constraint.toString())) {
 
                             // add the location row (name, desc, icon) to the array
                             FilteredArrList.add(new Location(originalValues.get(i).location_name,originalValues.get(i).location_descriptions, originalValues.get(i).location_icons));
