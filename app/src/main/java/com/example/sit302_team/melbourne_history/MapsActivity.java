@@ -349,63 +349,63 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 switch (marker.getTitle()) {
 
                     case "Cooks Cottage":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Government House":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Immigration Museum":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Luna Park":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Melbourne Museum":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Melbourne Museum of Printing":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Melbourne Town Hall":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Melbourne Chinese Museum":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Old Melbourne Gaol":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Parliament House":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Polly Woodside Tall Ship":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Rippon Lea House & Gardens":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Royal Arcade":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "Shrine of Remembrance":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
                     case "The Block Arcade":
-                        Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();// display toast
+
                         GoToLocationDetailsPage(marker.getTitle());
                         break;
 
